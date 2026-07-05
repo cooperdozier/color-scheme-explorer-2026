@@ -21,10 +21,10 @@ async function getRandomColorScheme() {
     try {
         const response = await fetch(endpoint);
         // return console.log(response);
-        const returnedData = await response.body.json();
+        const returnedData = await response.json();
         const receivedScheme = returnedData.colors;
-        // return console.log(returnedData)
-        return console.log(receivedScheme);
+        return console.log(returnedData)
+        // return console.log(receivedScheme);
     } catch (error) {
         console.log(error);
     }
