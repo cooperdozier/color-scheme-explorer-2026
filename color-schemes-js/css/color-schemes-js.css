@@ -1,0 +1,16 @@
+#submenu .grid-list {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr;
+    grid-template-areas: "control1 control2"
+                        "control3 control4"
+                        "control5 control6" */
+    grid-template-columns: repeat(2, 1fr); 
+  grid-template-rows: repeat(3, auto);  
+  margin: auto;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+}
+.grid-list li {
+    width: 100%;
+}
