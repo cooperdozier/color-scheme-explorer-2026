@@ -17,12 +17,14 @@ app.use(express.urlencoded({extended: false}));
 
 
 async function getRandomColorScheme() {
-    const endpoint = `https://www.colourlovers.com/api/palettes/random?format=json`
+    // const endpoint = `https://www.colourlovers.com/api/palettes/random?format=json`
+    const endpoint = "https://www.thecolorapi.com/scheme?hex=EEEEBB&format=json"
     try {
         const response = await fetch(endpoint);
-        return console.log(response);
-        const returnedData = await response.data.json();
-        const receivedScheme = returnedData.colors;
+        // return console.log(response);
+        const returnedData = await response.json();
+        // const receivedScheme = returnedData.colors;
+        return returnedData
         // return console.log(returnedData.json())
         // return console.log(receivedScheme);
     } catch (error) {

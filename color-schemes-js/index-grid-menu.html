@@ -77,12 +77,24 @@
 		</div>
 		<div id="submenu">
 			<div class="grid-list pure-u-1">
-				<button>Get Random Scheme</div>
-				<button>Rotate Colors</div>
-				<button>Shuffle Colors</div>
-				<form>Input Scheme ID</div>
-				<form>Change Background</div>
-				<form>Change a Color</div>
+				<button>Get Random Scheme</button>
+				<button>Rotate Colors</button>
+				<button>Shuffle Colors</button>
+				<form>Input Scheme ID</form>
+				<!-- <form>Change Background 
+					<label for="bg-select">Choose a background:</label>
+					<select id="bg-select">
+						<option value="dark">Dark</option>
+						<option value="light">Light</option>
+						<option value="black">Black</option>
+						<option value="white">White</option>
+						<option value="beige">Beige</option>
+						<option value="random">Random</option>
+						<option value="photo">Photo</option>
+					</select>
+					<button id="bg-select-button">Submit</button>
+				</form> -->
+				<form>Change a Color</form>
 			</div>
 		</div>
 	</nav>
@@ -92,6 +104,21 @@
 	<div class="forty-em-one-column pure-g">
 
 		<main class="main-column pure-u-1">
+			
+			<div class="bg-select-area">
+					<label for="bg-select">Choose a background:</label>
+					<select id="bg-select">
+						<option value="dark">Dark</option>
+						<option value="light">Light</option>
+						<option value="grey">Grey</option>
+						<option value="black">Black</option>
+						<option value="white">White</option>
+						<option value="beige">Beige</option>
+						<option value="random">Random</option>
+						<option value="photo">Photo</option>
+					</select>
+					<button id="bg-select-button">Submit</button>
+				</div>
 
 			<h1>Lorem Ipsem Dolor</h1>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
@@ -111,7 +138,7 @@
 				Licensed under the MIT license - http://opensource.org/licenses/MIT</p>
 		</div>
 	</footer>
+	<script src="js/static-controls.js"></script>
 
 </body>
-
 </html>
