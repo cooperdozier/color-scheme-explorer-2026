@@ -4,8 +4,8 @@ async function getRandomColorScheme() {
     const endpoint = "http://localhost:8080/api/v1/getRandomColorScheme";
     try {
         const response = await fetch(endpoint);
-        // const returnedData = await response.json();
-        console.log(response.body)
+        const returnedData = await response.json();
+        return console.log(response)
         // const receivedScheme = returnedData.data;
         // console.log(receivedScheme)
         // console.log(response)

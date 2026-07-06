@@ -20,10 +20,10 @@ async function getRandomColorScheme() {
     const endpoint = `https://www.colourlovers.com/api/palettes/random?format=json`
     try {
         const response = await fetch(endpoint);
-        // return console.log(response);
-        const returnedData = await response.json();
+        return console.log(response);
+        const returnedData = await response.data.json();
         const receivedScheme = returnedData.colors;
-        return console.log(returnedData)
+        // return console.log(returnedData.json())
         // return console.log(receivedScheme);
     } catch (error) {
         console.log(error);
