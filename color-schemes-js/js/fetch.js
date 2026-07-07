@@ -1,8 +1,13 @@
-let color = "65BBEA";
-let url = `https://www.thecolorapi.com/scheme?hex=${color}&count=10&format=json&mode=quad`;
+// let color = "65BBEA";
+// let color = document.getElementById("scheme-select").value};
+
+// let url = `https://www.thecolorapi.com/scheme?hex=${color}&count=10&format=json&mode=quad`;
 // let url = "https://colormagic.api/api/palette/search?q=blue"
 // let url = `https://colormagic.app/api/palette/search?q=green`
-async function sendRequest() {
+async function sendRequest(color,mode) {
+    mode = document.getElementById("scheme-select-mode").value;
+    color = document.getElementById("scheme-select-color").value;
+    let url = `https://www.thecolorapi.com/scheme?hex=${color}&count=10&format=json&mode=${mode}`;
     const response = await fetch(url);
     const json = await response.json();
     return json;
@@ -16,6 +21,11 @@ async function getData() {
     document.getElementById("three").style.backgroundColor = `${data.colors[2].hex.value}`;
     document.getElementById("four").style.backgroundColor = `${data.colors[3].hex.value}`;
     document.getElementById("five").style.backgroundColor = `${data.colors[4].hex.value}`;
+    document.getElementById("six").style.backgroundColor = `${data.colors[5].hex.value}`;
+    document.getElementById("seven").style.backgroundColor = `${data.colors[6].hex.value}`;
+    document.getElementById("eight").style.backgroundColor = `${data.colors[7].hex.value}`;
+    document.getElementById("nine").style.backgroundColor = `${data.colors[8].hex.value}`;
+    document.getElementById("ten").style.backgroundColor = `${data.colors[9].hex.value}`;
     
     // document.getElementById("one").style.backgroundColor = `${data[0].colors[0]}`;
     // document.getElementById("two").style.backgroundColor = `${data[0].colors[1]}`;
@@ -27,4 +37,10 @@ async function getData() {
     // console.log(data[0].colors[0])
 }
 
-getData();
+document.getElementById('get-scheme').addEventListener('click', e => {
+    e.preventDefault();
+    getData();
+}
+)
+
+// getData();

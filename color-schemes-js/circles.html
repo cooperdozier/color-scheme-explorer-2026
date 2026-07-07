@@ -55,7 +55,7 @@
 	<nav class="nav-wrapper pure-g" id="main-menu">
 		<div class="pure-u-1 pure-u-md-1-4">
 			<div class="pure-menu">
-				<a href="index.html" class="pure-menu-heading site-title">Lorem Ipsum Dolor</a>
+				<a href="index.html" class="pure-menu-heading site-title">Color Scheme explorer</a>
 				<span class="main-menu-hamburger" id="main-menu-switch"><span
 					class="x-switch-animation"></span><span class="x-switch-animation"></span><span class="x-switch-animation"></span></span>
 			</div>
@@ -66,7 +66,7 @@
 					<li class="pure-menu-item"><a class="pure-menu-link" href="bars.html">Bars</a></li>
 					<li class="pure-menu-item"><a class="pure-menu-link" href="circles.html">Circles</a></li>
 					<li class="pure-menu-item"><a class="pure-menu-link" href="lorem-ipsum.html">Lorem Ipsum</a></li>
-					<li class="pure-menu-item"><a class="pure-menu-link" href="history.html">History</a></li>
+					<li class="pure-menu-item"><a class="pure-menu-link" href="color-converter.html">Color Converter</a></li>
 					<li class="submenu-heading pure-menu-item"><span class="pure-menu-link"
 						id="submenu-switch">Controls</span>
 
@@ -77,21 +77,97 @@
 		</div>
 		<div id="submenu">
 			<div class="grid-list pure-u-1">
-				<button>Get Random Scheme</div>
-				<button>Rotate Colors</div>
-				<button>Shuffle Colors</div>
-				<form>Input Scheme ID<input type="text"></div>
-				<form>Change Background<select>
-					<option value="dark">Dark</option>
-					<option value="light">Light</option>
-					<option value="black">Black</option>
-					<option value="white">White</option>
-					<option value="beige">Beige</option>
-					<option value="random">Random</option>
-				</select></div>
-				<form>Change a Color
-					<input type="text">Color input 
-					<input type="range">Which color to change and a swatch (JS)
+				<div class="scheme-selector-area">
+					<label for="scheme-select-color">Get Scheme by Color</label>
+					<input type="text"
+  					id="scheme-select-color"
+  					name="scheme-select"
+  					minlength="6"
+  					maxlength="6"
+  					size="10" />
+					<select id="scheme-select-mode">
+						<option value="quad">Quad</option>
+						<option value="triad">Triad</option>
+						<option value="complement">Complement</option>
+						<option value="analogic-complement">Analogic Complement</option>
+						<option value="analogic">Analogic</option>
+						<option value="monochrome">Monochrome</option>
+						<option value="monochrome-dark">Monochrome Dark</option>
+						<option value="monochrome-light">Monochrome Light</option>
+					</select>
+					<button id="get-scheme">Get Scheme</button>
+				</div>
+				<!-- <button>Rotate Colors</button>
+				<button>Shuffle Colors</button>
+				<form>Input Scheme ID</form> -->
+
+				<div class="bg-select-area">
+					<label for="bg-select">Choose a background:</label>
+					<select id="bg-select">
+						<option value="dark">Dark</option>
+						<option value="light">Light</option>
+						<option value="grey">Grey</option>
+						<option value="black">Black</option>
+						<option value="white">White</option>
+						<option value="beige">Beige</option>
+						<option value="random">Random</option>
+						<option value="photo">Photo</option>
+					</select>
+					<button id="bg-select-button">Submit</button>
+				</div>
+				<div class="scheme-selector-area">
+				<p>Change a Color</p>
+					<label for="color-1">Set Color 1</label>
+					<input type="color"
+  					id="color-1"
+  					name="color-1"
+					/>
+					<label for="color-2">Set Color 2</label>
+					<input type="color"
+  					id="color-2"
+  					name="color-2"
+					/>
+					<label for="color-3">Set Color 3</label>
+					<input type="color"
+  					id="color-3"
+  					name="color-3"
+					/>
+					<label for="color-4">Set Color 4</label>
+					<input type="color"
+  					id="color-4"
+  					name="color-4"
+					/>
+					<label for="color-5">Set Color 5</label>
+					<input type="color"
+  					id="color-5"
+  					name="color-5"
+					/>
+					<label for="color-6">Set Color 6</label>
+					<input type="color"
+  					id="color-6"
+  					name="color-6"
+					/>
+					<label for="color-7">Set Color 7</label>
+					<input type="color"
+  					id="color-7"
+  					name="color-7"
+					/>
+					<label for="color-8">Set Color 8</label>
+					<input type="color"
+  					id="color-8"
+  					name="color-8"
+					/>
+					<label for="color-9">Set Color 9</label>
+					<input type="color"
+  					id="color-9"
+  					name="color-9"
+					/>
+					<label for="color-10">Set Color 10</label>
+					<input type="color"
+  					id="color-10"
+  					name="color-10"
+					/>
+					<!-- <button id="get-scheme">Get Scheme</button> -->
 				</div>
 			</div>
 		</div>
@@ -103,13 +179,22 @@
 
 		<main class="main-column pure-u-1">
 
-			<h1>Lorem Ipsem Dolor</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
-				et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-				aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-				culpa qui officia deserunt mollit anim id est laborum.</p>
-
+			<div class="no-text" id="oneLi"><span id="oneLabel"></span><p id="one">&nbsp;</p></div>
+			<div class="black-text" id="twoLi"><span id="twoLabel"></span><p id="two">TEST</p></div>
+            <div class="white-text" id="threeLi"><span id="threeLabel"></span><p id="three">TEST</p></div>
+            <div class="no-text" id="fourLi"><span id="fourLabel"></span><p id="four">&nbsp;</p></div>
+            <div class="black-text" id="fiveLi"><span id="fiveLabel"></span><p id="five">TEST</p></div>
+			<div class="white-text" id="sixLi"><span id="fiveLabel"></span><p id="six">TEST</p></div>
+			<div class="no-text" id="sevenLi"><span id="fiveLabel"></span><p id="seven">&nbsp;</p></div>
+			<div class="black-text" id="eightLi"><span id="fiveLabel"></span><p id="eight">TEST</p></div>
+			<div class="white-text" id="nineLi"><span id="fiveLabel"></span><p id="nine">TEST</p></div>
+			<div class="no-text" id="tenLi"><span id="fiveLabel"></span><p id="ten">&nbsp;</p></div>
+				
+			<div>
+				<p>Save Scheme</p>
+				<input type="text" id="scheme-title" placeholder="Title">
+				<button id="save-scheme">Save</button>
+			</div>
 		</main>
 
 	</div>
@@ -121,7 +206,8 @@
 				Licensed under the MIT license - http://opensource.org/licenses/MIT</p>
 		</div>
 	</footer>
-
+	<!-- <script type="text/javascript" src="js/fetch.js"></script> -->
+	<script type="text/javascript" src="js/static-controls.js"></script>
 </body>
 
 </html>

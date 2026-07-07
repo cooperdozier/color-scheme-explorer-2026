@@ -14,3 +14,10 @@
 .grid-list li {
     width: 100%;
 }
+
+.labels {
+  display: inline-block;
+}
+.white-text {
+  color: white;
+}
