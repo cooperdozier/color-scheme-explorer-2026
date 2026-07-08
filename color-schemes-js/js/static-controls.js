@@ -36,33 +36,52 @@ document.getElementById("bg-select-button").addEventListener("click", e => {
     }
 )
 
+let color1 = document.getElementById("color-1");
+let color2 = document.getElementById("color-2");
+let color3 = document.getElementById("color-3");
+let color4 = document.getElementById("color-4");
+let color5 = document.getElementById("color-5");
+let color6 = document.getElementById("color-6");
+let color7 = document.getElementById("color-7");
+let color8 = document.getElementById("color-8");
+let color9 = document.getElementById("color-9");
+let color10 = document.getElementById("color-10");
+
 document.getElementById("color-1").addEventListener("input", e => {
-    document.getElementById("one").style.backgroundColor = document.getElementById("color-1").value;
+    document.getElementById("one").style.backgroundColor = color1.value;
 })
 document.getElementById("color-2").addEventListener("input", e => {
-    document.getElementById("two").style.backgroundColor = document.getElementById("color-2").value;
+    document.getElementById("two").style.backgroundColor = color2.value;
 })
 document.getElementById("color-3").addEventListener("input", e => {
-    document.getElementById("three").style.backgroundColor = document.getElementById("color-3").value;
+    document.getElementById("three").style.backgroundColor = color3.value;
 })
 document.getElementById("color-4").addEventListener("input", e => {
-    document.getElementById("four").style.backgroundColor = document.getElementById("color-4").value;
+    document.getElementById("four").style.backgroundColor = color4.value;
 })
 document.getElementById("color-5").addEventListener("input", e => {
-    document.getElementById("five").style.backgroundColor = document.getElementById("color-5").value;
+    document.getElementById("five").style.backgroundColor = color5.value;
 })
 document.getElementById("color-6").addEventListener("input", e => {
-    document.getElementById("six").style.backgroundColor = document.getElementById("color-6").value;
+    document.getElementById("six").style.backgroundColor = color6.value;
 })
 document.getElementById("color-7").addEventListener("input", e => {
-    document.getElementById("seven").style.backgroundColor = document.getElementById("color-7").value;
+    document.getElementById("seven").style.backgroundColor = color7.value;
 })
 document.getElementById("color-8").addEventListener("input", e => {
-    document.getElementById("eight").style.backgroundColor = document.getElementById("color-8").value;
+    document.getElementById("eight").style.backgroundColor = color8.value;
 })
 document.getElementById("color-9").addEventListener("input", e => {
-    document.getElementById("nine").style.backgroundColor = document.getElementById("color-9").value;
+    document.getElementById("nine").style.backgroundColor = color9.value;
 })
 document.getElementById("color-10").addEventListener("input", e => {
-    document.getElementById("ten").style.backgroundColor = document.getElementById("color-10").value;
+    document.getElementById("ten").style.backgroundColor = color10.value;
+})
+
+let scheme =[];
+// let n = localStorage.length;
+document.getElementById("save-scheme").addEventListener("click", e =>{
+    scheme = [document.getElementById("scheme-title").value,color1.value,color2.value,color3.value,color4.value,color5.value,color6.value,color7.value,color8.value,color9.value,color10.value]
+    localStorage.setItem(`Scheme ${localStorage.length}`, JSON.stringify(scheme));
+    // n = n+1;
 })

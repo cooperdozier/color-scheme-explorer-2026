@@ -17,15 +17,15 @@ async function getData() {
     const data = await sendRequest();
     // console.log(data);
     document.getElementById("one").style.backgroundColor = `${data.colors[0].hex.value}`;
-    document.getElementById("two").style.backgroundColor = `${data.colors[1].hex.value}`;
-    document.getElementById("three").style.backgroundColor = `${data.colors[2].hex.value}`;
-    document.getElementById("four").style.backgroundColor = `${data.colors[3].hex.value}`;
-    document.getElementById("five").style.backgroundColor = `${data.colors[4].hex.value}`;
+    document.getElementById("one").style.border = `8px solid ${data.colors[1].hex.value}`;
+    document.getElementById("three").style.color = `${data.colors[2].hex.value}`;
+    document.getElementById("four").style.color = `${data.colors[3].hex.value}`;
+    document.getElementById("five").style.color = `${data.colors[4].hex.value}`;
     document.getElementById("six").style.backgroundColor = `${data.colors[5].hex.value}`;
-    document.getElementById("seven").style.backgroundColor = `${data.colors[6].hex.value}`;
-    document.getElementById("eight").style.backgroundColor = `${data.colors[7].hex.value}`;
-    document.getElementById("nine").style.backgroundColor = `${data.colors[8].hex.value}`;
-    document.getElementById("ten").style.backgroundColor = `${data.colors[9].hex.value}`;
+    document.getElementById("six").style.border = `8px solid ${data.colors[6].hex.value}`;
+    document.getElementById("eight").style.color = `${data.colors[7].hex.value}`;
+    document.getElementById("nine").style.color = `${data.colors[8].hex.value}`;
+    document.getElementById("ten").style.color = `${data.colors[9].hex.value}`;
     
     document.getElementById("color-1").value = `${data.colors[0].hex.value}`;
     document.getElementById("color-2").value = `${data.colors[1].hex.value}`;

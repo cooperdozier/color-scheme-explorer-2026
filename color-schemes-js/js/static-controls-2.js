@@ -51,7 +51,7 @@ document.getElementById("color-1").addEventListener("input", e => {
     document.getElementById("one").style.backgroundColor = color1.value;
 })
 document.getElementById("color-2").addEventListener("input", e => {
-    document.getElementById("one").style.border = `solid 4px ${color2.value}`;
+    document.getElementById("one").style.border = `solid 8px ${color2.value}`;
 })
 document.getElementById("color-3").addEventListener("input", e => {
     document.getElementById("three").style.color = color3.value;
@@ -60,13 +60,13 @@ document.getElementById("color-4").addEventListener("input", e => {
     document.getElementById("four").style.color = color4.value;
 })
 document.getElementById("color-5").addEventListener("input", e => {
-    document.getElementById("five").style.color = color5.value;
+    document.getElementById("five").style.backgroundColor = color5.value;
 })
 document.getElementById("color-6").addEventListener("input", e => {
     document.getElementById("six").style.backgroundColor = color6.value;
 })
 document.getElementById("color-7").addEventListener("input", e => {
-    document.getElementById("six").style.border = `solid 4px ${color7.value}`;
+    document.getElementById("six").style.border = `solid 8px ${color7.value}`;
 })
 document.getElementById("color-8").addEventListener("input", e => {
     document.getElementById("eight").style.color = color8.value;
@@ -75,12 +75,12 @@ document.getElementById("color-9").addEventListener("input", e => {
     document.getElementById("nine").style.color = color9.value;
 })
 document.getElementById("color-10").addEventListener("input", e => {
-    document.getElementById("ten").style.color = color10.value;
+    document.getElementById("ten").style.backgroundColor = color10.value;
 })
 let scheme =[];
-let n = 0;
+let n = localStorage.length;
 document.getElementById("save-scheme").addEventListener("click", e =>{
     scheme = [document.getElementById("scheme-title").value,color1.value,color2.value,color3.value,color4.value,color5.value,color6.value,color7.value,color8.value,color9.value,color10.value]
-    localStorage.setItem(`Scheme ${n + 1}`, JSON.stringify(scheme));
-    n= n+1;
+    localStorage.setItem(`Scheme ${localStorage.length}`, JSON.stringify(scheme));
+    n = n+1;
 })
