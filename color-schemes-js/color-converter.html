@@ -60,6 +60,16 @@
 						id="submenu-switch">Controls</span></li>
 				</ul>
 			</div>
+			<div id="submenu">
+				<div class="grid-list pure-u-1">
+					<label for="convert-a-color">Convert a color:</label>
+					<input id="convert-a-color" name="convert-a-color" type="color" />
+					<label for="convert-exact-color">Convert a color:</label>
+					<input id="convert-exact-color" name="convert-exact-color" type="text" />
+					<label for="convert-a-scheme">Convert a color scheme:</label>
+					<input id="convert-a-scheme" name="convert-a-scheme" type="text" />
+				</div>
+			</div>
 		</div>
 	</nav>
 
@@ -69,12 +79,10 @@
 
 		<main class="main-column pure-u-1">
 
-			<h1>Lorem Ipsem Dolor</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
-				et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-				aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-				culpa qui officia deserunt mollit anim id est laborum.</p>
+			<h1>Convert Colors</h1>
+			<ul id="converted-color">
+
+			</ul>
 
 		</main>
 
@@ -87,7 +95,9 @@
 				Licensed under the MIT license - http://opensource.org/licenses/MIT</p>
 		</div>
 	</footer>
-
+	<!-- <script src="js/color-converter.js" type="module"></script> -->
+	<!-- <script src="js/color-converter.js"></script> -->
+	 <script src="../node_modules/color-convert/index.js" type="module"></script>
 </body>
 
 </html>

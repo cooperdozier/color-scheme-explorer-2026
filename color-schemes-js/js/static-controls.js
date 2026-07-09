@@ -78,6 +78,38 @@ document.getElementById("color-10").addEventListener("input", e => {
     document.getElementById("ten").style.backgroundColor = color10.value;
 })
 
+
+document.getElementById("color-1").addEventListener("input", e => {
+    document.getElementById("one").innerText = color1.value;
+})
+document.getElementById("color-2").addEventListener("input", e => {
+    document.getElementById("two").innerText = color2.value;
+})
+document.getElementById("color-3").addEventListener("input", e => {
+    document.getElementById("three").innerText = color3.value;
+})
+document.getElementById("color-4").addEventListener("input", e => {
+    document.getElementById("four").innerText = color4.value;
+})
+document.getElementById("color-5").addEventListener("input", e => {
+    document.getElementById("five").innerText = color5.value;
+})
+document.getElementById("color-6").addEventListener("input", e => {
+    document.getElementById("six").innerText = color6.value;
+})
+document.getElementById("color-7").addEventListener("input", e => {
+    document.getElementById("seven").innerText = color7.value;
+})
+document.getElementById("color-8").addEventListener("input", e => {
+    document.getElementById("eight").innerText = color8.value;
+})
+document.getElementById("color-9").addEventListener("input", e => {
+    document.getElementById("nine").innerText = color9.value;
+})
+document.getElementById("color-10").addEventListener("input", e => {
+    document.getElementById("ten").innerText = color10.value;
+})
+
 let scheme =[];
 // let n = localStorage.length;
 document.getElementById("save-scheme").addEventListener("click", e =>{
