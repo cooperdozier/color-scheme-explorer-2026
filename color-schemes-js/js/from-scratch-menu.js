@@ -55,13 +55,13 @@ document.getElementById('submenu-switch').addEventListener('click', function (e)
     switch (true) {
         case (layoutState[0] === 'wide' && layoutState[1] === 'closed'):
             document.getElementById('submenu').style.display = "block";
-            document.getElementById('main-menu').style.height = "13em";
+            document.getElementById('main-menu').style.height = "20em";
             layoutState[1] = 'open';
             console.log('3');
             break;
         case (layoutState[0] === 'narrow' && layoutState[1] === 'closed'):
             document.getElementById('submenu').style.display = "block";
-            document.getElementById('main-menu').style.height = "25.6em";
+            document.getElementById('main-menu').style.height = "43.6em";
             document.getElementById('submenu').classList.add('narrow-menu');
             layoutState[1] = 'open';
             console.log('4');
@@ -74,7 +74,7 @@ document.getElementById('submenu-switch').addEventListener('click', function (e)
             break;
         case (layoutState[0] === 'narrow' && layoutState[1] === 'open'):
             document.getElementById('submenu').style.display = "none";
-            document.getElementById('main-menu').style.height = "15.2em";
+            document.getElementById('main-menu').style.height = "18.2em";
             layoutState[1] = 'closed';
             console.log('6');
             break;
@@ -87,7 +87,7 @@ document.getElementById('main-menu-switch').addEventListener('click', function (
     switch (true) {
         case (layoutState[0] === 'narrow' && layoutState[2] === 'closed'):
             document.getElementById('main-menu-list').style.display = "block";
-            document.getElementById('main-menu').style.height = "15.2em";
+            document.getElementById('main-menu').style.height = "18.2em";
             document.getElementById('i-can-transform').classList.remove('pure-menu-horizontal');
             document.getElementById('main-menu-switch').classList.add('x-shape');
             layoutState[1] = 'closed';

@@ -36,7 +36,7 @@
     <meta name="twitter:image" content="http://www.domain.tld/img/domain-social-b.jpg">
     <meta name="twitter:image:width" content="1200">
     <meta name="twitter:image:height" content="630">
-	<style>
+	<!-- <style>
 		.grid-list {
     display: grid;
     /* grid-template-columns: 1fr 1fr;
@@ -47,6 +47,13 @@
   grid-template-rows: repeat(3, auto);  
   gap: 16px;
 }
+</style> -->
+<style>
+	#six, #one {
+		margin: 3em;
+		border-radius: 20px;
+		padding: 20px;
+	}
 </style>
 </head>
 
@@ -131,6 +138,26 @@
 					/>
 					<!-- <button id="get-scheme">Get Scheme</button> -->
 				</div>
+
+				<hr />
+
+					<label for="background-input">Custom Background</label>
+					<input type="color"
+  					id="background-input"
+  					name="background-input"
+					/>
+
+				<hr />
+
+				<label for="background-input-exact">Custom Background Exact</label>
+					<input type="text"
+					id="background-input-exact"
+					name="background-input-exact"
+					/>
+				<button id="background-input-exact-submit">Submit</button>
+
+				<hr />
+
 				<div class="bg-select-area">
 					<label for="bg-select">Choose a background:</label>
 					<select id="bg-select">
@@ -145,14 +172,41 @@
 					</select>
 					<button id="bg-select-button">Submit</button>
 				</div>
+
+				<hr />
+
 				<div class="scheme-selector-area">
-					<label for="scheme-select-color">Get Scheme by Color</label>
+					<label for="scheme-select-color-exact">Get Scheme by Exact Color</label>
 					<input type="text"
-  					id="scheme-select-color"
+  					id="scheme-select-color-exact"
   					name="scheme-select"
   					minlength="6"
   					maxlength="6"
   					size="10" />
+					<select id="scheme-select-mode-exact">
+						<option value="quad">Quad</option>
+						<option value="triad">Triad</option>
+						<option value="complement">Complement</option>
+						<option value="analogic-complement">Analogic Complement</option>
+						<option value="analogic">Analogic</option>
+						<option value="monochrome">Monochrome</option>
+						<option value="monochrome-dark">Monochrome Dark</option>
+						<option value="monochrome-light">Monochrome Light</option>
+					</select>
+					<button id="get-scheme-exact">Get Scheme</button>
+				</div>
+
+				<hr />
+
+				<div class="scheme-selector-area">
+					<label for="scheme-select-color">Get Scheme by Color</label>
+					<!-- <input type="text"
+  					id="scheme-select-color"
+  					name="scheme-select"
+  					minlength="6"
+  					maxlength="6"
+  					size="10" /> -->
+					<input type="color" id="scheme-select-color" name="scheme-select"/>
 					<select id="scheme-select-mode">
 						<option value="quad">Quad</option>
 						<option value="triad">Triad</option>
@@ -165,7 +219,7 @@
 					</select>
 					<button id="get-scheme">Get Scheme</button>
 				</div>
-				<!-- <form>Change a Color</form> -->
+				
 			</div>
 		</div>
 	</nav>
@@ -207,7 +261,7 @@
 				Licensed under the MIT license - http://opensource.org/licenses/MIT</p>
 		</div>
 	</footer>
-	<!-- <script src="js/fetch-2.js"></script> -->
+	<script src="js/fetch-2.js"></script>
 	<script src="js/static-controls-2.js"></script>
 </body>
 

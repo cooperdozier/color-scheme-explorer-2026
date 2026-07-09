@@ -12,7 +12,7 @@ body {
     background-color: #FAFBEA;
 }
 .forty-em-one-column {
-    max-width: 40em;
+    max-width: 50em;
     margin: auto;
 }
 .main-column {
@@ -126,6 +126,8 @@ then the pseudo-class on Element.main-menu-hamburger would refer to an element o
 .main-menu-hamburger.x-shape .x-switch-animation:first-child {
     transform: rotate(-45deg);
 }
+
+/* responsive media breakpoint */
 @media (max-width: 47.999em) {
     .transforming-wrapper {
         text-align: left;
