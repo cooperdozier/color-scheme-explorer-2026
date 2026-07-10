@@ -36,6 +36,7 @@
     <meta name="twitter:image" content="http://www.domain.tld/img/domain-social-b.jpg">
     <meta name="twitter:image:width" content="1200">
     <meta name="twitter:image:height" content="630">
+
 </head>
 
 <body>
@@ -64,8 +65,15 @@
 				<div class="grid-list pure-u-1">
 					<label for="convert-a-color">Convert a color:</label>
 					<input id="convert-a-color" name="convert-a-color" type="color" />
-					<label for="convert-exact-color">Convert a color:</label>
-					<input id="convert-exact-color" name="convert-exact-color" type="text" />
+					<hr />
+					<label for="convert-an-exact-color">Convert an exact color:</label>
+					<input id="convert-an-exact-color" name="convert-an-exact-color" type="text" />
+					<button id="convert-an-exact-color-button">Submit</button>
+					<hr />
+					<label for="convert-a-color-name">Convert a named color</label>
+					<input id="convert-a-color-name" name="convert-a-color-name" type="text" />
+					<button id="convert-a-color-name-button">Submit</button>
+					<hr />
 					<label for="convert-a-scheme">Convert a color scheme:</label>
 					<input id="convert-a-scheme" name="convert-a-scheme" type="text" />
 				</div>
@@ -95,7 +103,8 @@
 				Licensed under the MIT license - http://opensource.org/licenses/MIT</p>
 		</div>
 	</footer>
-	<script src="js/color-converter.js" type="module"></script>
+	<!-- <script src="js/color-converter.js" type="module"></script> -->
+	 <script src="js/tinycolor.js"></script>
 	<!-- <script src="js/color-converter.js"></script> -->
 	 <!-- <script src="../node_modules/color-convert/index.js" type="module"></script> -->
 </body>

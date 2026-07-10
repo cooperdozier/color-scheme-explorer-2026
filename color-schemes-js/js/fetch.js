@@ -113,7 +113,7 @@ async function getData2() {
 document.getElementById('get-scheme').addEventListener('click', e => {
     // prevent window from refreshing to no-data on click
     e.preventDefault();
-    // do all of the above things on click get scheme button
+    // do all of the above things on click of get scheme button
     getData1();
 }
 )
@@ -122,9 +122,7 @@ document.getElementById('get-scheme').addEventListener('click', e => {
 document.getElementById('get-scheme-exact').addEventListener('click', e => {
     // prevent window from refreshing to no-data on click
     e.preventDefault();
-    // do all of the above things on click get exact scheme button
+    // do all of the above things on click of get exact scheme button
     getData2();
 }
 )
-
-// getData();
