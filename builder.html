@@ -11,7 +11,6 @@
 	<!-- site styles -->
 	<link rel="stylesheet" href="css/menu-and-base.css">
 	<link rel="stylesheet" href="css/color-schemes-js.css">
-	<script src="js/from-scratch-menu.js" async></script>
 	<link rel="icon" href="favicon.gif">
 
 	<meta property="og:site_name" content="">
@@ -145,6 +144,82 @@
 					</select>
 					<button id="bg-select-button">Submit</button>
 				</div>
+
+				<hr />
+
+				<label for="background-input">Custom Background</label>
+					<input type="color"
+  					id="background-input"
+  					name="background-input"
+					/>
+
+				<hr />
+
+				<label for="background-input-exact">Custom Background Exact</label>
+					<input type="text"
+					id="background-input-exact"
+					name="background-input-exact"
+					/>
+				<button id="background-input-exact-submit">Submit</button>
+
+				<hr />
+
+				<div class="bg-select-area">
+					<label for="bg-select">Choose a background:</label>
+					<select id="bg-select">
+						<option value="dark">Dark</option>
+						<option value="light">Light</option>
+						<option value="grey">Grey</option>
+						<option value="black">Black</option>
+						<option value="white">White</option>
+						<option value="beige">Beige</option>
+						<option value="random">Random</option>
+						<option value="photo">Photo</option>
+					</select>
+					<button id="bg-select-button">Submit</button>
+				</div>
+				
+				<hr />
+
+				<div class="scheme-selector-area">
+					<label for="scheme-select-color">Get Scheme by Color</label>
+					<input type="color" id="scheme-select-color" name="scheme-select"/>
+					<select id="scheme-select-mode">
+						<option value="quad">Quad</option>
+						<option value="triad">Triad</option>
+						<option value="complement">Complement</option>
+						<option value="analogic-complement">Analogic Complement</option>
+						<option value="analogic">Analogic</option>
+						<option value="monochrome">Monochrome</option>
+						<option value="monochrome-dark">Monochrome Dark</option>
+						<option value="monochrome-light">Monochrome Light</option>
+					</select>
+					<button id="get-scheme">Get Scheme</button>
+				</div>
+				
+				<hr />
+
+				<div class="scheme-selector-area">
+					<label for="scheme-select-color-exact">Get Scheme by Exact Color</label>
+					<input type="text"
+  					id="scheme-select-color-exact"
+  					name="scheme-select"
+  					minlength="6"
+  					maxlength="6" 
+  					size="10" />
+					<!-- <input type="color" id="scheme-select-color" name="scheme-select"/> -->
+					<select id="scheme-select-mode-exact">
+						<option value="quad">Quad</option>
+						<option value="triad">Triad</option>
+						<option value="complement">Complement</option>
+						<option value="analogic-complement">Analogic Complement</option>
+						<option value="analogic">Analogic</option>
+						<option value="monochrome">Monochrome</option>
+						<option value="monochrome-dark">Monochrome Dark</option>
+						<option value="monochrome-light">Monochrome Light</option>
+					</select>
+					<button id="get-scheme-exact">Get Scheme</button>
+				</div>
 				<!-- <form>Change a Color</form> -->
 			</div>
 		</div>
@@ -191,7 +266,8 @@
 				Licensed under the MIT license - http://opensource.org/licenses/MIT</p>
 		</div>
 	</footer>
-	<!-- <script src="js/fetch.js"></script> -->
+
+	<script src="js/from-scratch-menu.js"></script>
 	<script src="js/static-controls.js"></script>
 
 </body>
