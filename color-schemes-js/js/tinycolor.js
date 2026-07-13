@@ -1192,12 +1192,27 @@
 }));
 
 
-var color = tinycolor("red");
-console.log(color.toPercentageRgbString());
 
-let colorUl = document.getElementById("converted-color")
-let colorInput = document.getElementById("convert-a-color")
-let exactColorInput = document.getElementById("convert-an-exact-color")
+
+
+
+
+let colorUl = document.getElementById("converted-color");
+let colorInput = document.getElementById("convert-a-color");
+let exactColorInput = document.getElementById("convert-an-exact-color");
+let schemeInput = document.getElementById("convert-a-scheme");
+// var color = tinycolor("red");
+// console.log(color.toPercentageRgbString());
+for (let i=0; i<localStorage.length; i++) {
+  let newOpt = document.createElement("option");
+  schemeInput.appendChild(newOpt);
+  let schemeJSON = JSON.parse(localStorage.getItem(`Scheme ${i}`));
+  console.log(schemeJSON);
+  newOpt.value = localStorage.key(i);
+  newOpt.innerText = schemeJSON[0];
+}
+
+
 
 document.getElementById("convert-a-color").addEventListener("input", e => {
   colorUl.innerHTML = "";
@@ -1232,3 +1247,43 @@ document.getElementById("convert-an-exact-color-button").addEventListener("click
   document.getElementById("newLi5").style.backgroundColor = `#${document.getElementById("convert-an-exact-color").value}`;
 });
 
+
+
+function convertAScheme(schemeNumber) {
+colorUl.innerHTML = "";
+let scheme = JSON.parse(localStorage.getItem(`${schemeNumber}`));
+let schemeName = document.createElement("p");
+console.log(scheme)
+schemeName.innerText = scheme[0];
+colorUl.appendChild(schemeName)
+
+for (let i=1; i<11; i++) {
+  let colorLi = document.createElement("Li");
+  colorLi.id = `color-${i}`
+  colorLi.classList = "converted-color"
+  let newSpan1 = document.createElement("span");
+  let newSpan2 = document.createElement("span");
+  let newSpan3 = document.createElement("span");
+  let newSpan4 = document.createElement("span");
+  let newSpan5 = document.createElement("span");
+  colorLi.appendChild(newSpan1).innerHTML = `${tinycolor(scheme[i]).toString()}<br>`;
+  // colorLi.appendChild("br");
+  colorLi.appendChild(newSpan2).innerHTML = `${tinycolor(scheme[i]).toString("rgb")}<br>`;
+  // colorLi.appendChild("br");
+  colorLi.appendChild(newSpan3).innerHTML = `${tinycolor(scheme[i]).toString("hsl")}<br>`;
+  // colorLi.appendChild("br");
+  colorLi.appendChild(newSpan4).innerHTML = `${tinycolor(scheme[i]).toString("hsv")}<br>`;
+  // colorLi.appendChild("br");
+  colorLi.appendChild(newSpan5).innerHTML = "converted-color<br>";
+//   console.log(newSpan5)
+  newSpan5.classList = "converted-color-panel";
+  newSpan5.style.backgroundColor = scheme[i];
+  colorUl.appendChild(colorLi);
+// console.log(newSpan5.style.backgroundColor)
+} 
+}
+
+
+document.getElementById("convert-a-color-scheme-button").addEventListener("click", e => {
+  convertAScheme(schemeInput.value)
+})

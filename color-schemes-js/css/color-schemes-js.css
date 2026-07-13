@@ -65,3 +65,15 @@
   grid-template-columns: 1fr 1fr;
   justify-content: space-around;
 }
+.converted-color {
+  display: inline-block;
+  margin: 0 20px 7px 20px;
+}
+.converted-color li {
+  padding: 5px;
+}
+.converted-color-panel {
+  padding: 10px;
+  color: white;
+  display: inline-block;
+}

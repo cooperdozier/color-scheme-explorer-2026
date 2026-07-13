@@ -1,4 +1,3 @@
-
 let data2 = []
 for (let i=0; i<localStorage.length; i++) {
     data2.push(JSON.parse(localStorage.getItem(`Scheme ${i}`)));

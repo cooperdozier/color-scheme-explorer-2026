@@ -63,7 +63,37 @@
 		</div>
 		<div id="submenu">
 			<div class="grid-list pure-u-1">
+				<label for="background-input">Custom Background</label>
+					<input type="color"
+  					id="background-input"
+  					name="background-input"
+					/>
 
+				<hr />
+
+				<label for="background-input-exact">Custom Background Exact</label>
+					<input type="text"
+					id="background-input-exact"
+					name="background-input-exact"
+					/>
+				<button id="background-input-exact-submit">Submit</button>
+
+				<hr />
+
+				<div class="bg-select-area">
+					<label for="bg-select">Choose a background:</label>
+					<select id="bg-select">
+						<option value="dark">Dark</option>
+						<option value="light">Light</option>
+						<option value="grey">Grey</option>
+						<option value="black">Black</option>
+						<option value="white">White</option>
+						<option value="beige">Beige</option>
+						<option value="random">Random</option>
+						<option value="photo">Photo</option>
+					</select>
+					<button id="bg-select-button">Submit</button>
+				</div>
 			</div>
 		</div>
 	</nav>
@@ -91,6 +121,8 @@
 	</footer>
 
 	<script src="js/saved-schemes.js"></script>
+	<script src="js/static-controls.js"></script>
+
 </body>
  
 </html>

@@ -143,6 +143,10 @@ color10.addEventListener("input", e => {
     colorPanel10.innerText = color10.value;
 })
 
+
+document.getElementById("save-scheme").innerText = `Save Scheme ${localStorage.length}`;
+
+
 // initialize save scheme variable; has to be outside the event listener for some reason
 let scheme =[];
 // on click for save-scheme button gather all scheme data into an array and save it to localStorage
@@ -151,3 +155,4 @@ document.getElementById("save-scheme").addEventListener("click", e =>{
     localStorage.setItem(`Scheme ${localStorage.length}`, JSON.stringify(scheme));
     // n = n+1;
 })
+
