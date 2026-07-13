@@ -65,12 +65,12 @@ let color10 = document.getElementById("color-10");
 
 //variables for color display text and divs
 let colorDisplay1 = document.getElementById("one");
-let colorDisplay2 = document.getElementById("two");
+let colorDisplay2 = document.getElementById("one");
 let colorDisplay3 = document.getElementById("three");
 let colorDisplay4 = document.getElementById("four");
 let colorDisplay5 = document.getElementById("five");
 let colorDisplay6 = document.getElementById("six");
-let colorDisplay7 = document.getElementById("seven");
+let colorDisplay7 = document.getElementById("six");
 let colorDisplay8 = document.getElementById("eight");
 let colorDisplay9 = document.getElementById("nine");
 let colorDisplay10 = document.getElementById("ten");
