@@ -80,3 +80,7 @@
 .color-pane {
   row-gap: 0.3;
 }
+.center {
+  display: flex;
+  justify-content: center;
+}

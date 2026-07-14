@@ -1,55 +1,28 @@
 // static-controls-2.js is used only in lorem-ipsum.html
 
-// set background color of main column
-document.getElementById("bg-select-button").addEventListener("click", e => {
-    const dropdown = document.getElementById("bg-select");
-    const value = dropdown.value;
-    // const text = dropdown.options[dropdown.selectedIndex].text;
-    switch (value) {
-        case 'black':
-            document.querySelector(".main-column").style.backgroundColor = "black";
-            break;
-        case 'white':
-            document.querySelector(".main-column").style.backgroundColor = "white";
-            break;
-        case 'light':
-            document.querySelector(".main-column").style.backgroundColor = '#fcefef';
-            break;
-        case 'grey':
-            document.querySelector(".main-column").style.backgroundColor = '#b9c4d5';
-            break;
-        case "dark":
-            document.querySelector(".main-column").style.backgroundColor = '#041a30';
-            break;
-        case "beige":
-            document.querySelector(".main-column").style.backgroundColor = 'beige';
-            break;
-        case "random":
-            let bgColor = '#' + (Math.floor(Math.random() * 16777216)).toString(16)
-            document.querySelector(".main-column").style.backgroundColor = `${bgColor}`;
-            break;
-        default:
-            document.querySelector(".main-column").style.backgroundColor = 'beige';
-    }
+// variables for exact color selector inputs
+let inputOne = document.getElementById("color-exact-one");
+let inputTwo = document.getElementById("color-exact-two");
+let inputThree = document.getElementById("color-exact-three");
+let inputFour = document.getElementById("color-exact-four");
+let inputFive = document.getElementById("color-exact-five");
+let inputSix = document.getElementById("color-exact-six");
+let inputSeven = document.getElementById("color-exact-seven");
+let inputEight = document.getElementById("color-exact-eight");
+let inputNine = document.getElementById("color-exact-nine");
+let inputTen = document.getElementById("color-exact-ten");
 
-    // return {value, text};
-    }
-)
-
-document.getElementById("background-input-exact-submit").addEventListener("click", e => {
-    // input validation
-    color = document.getElementById("background-input-exact").value;
-    let out = '#' + color;
-    if (!CSS.supports('color', out)) {
-        alert('Please enter a valid 6 digit hex color')
-        return
-    }
-    document.querySelector(".main-column").style.backgroundColor = `#${document.getElementById("background-input-exact").value}`;
-})
-
-document.getElementById("background-input").addEventListener("input", e => {
-    document.querySelector(".main-column").style.backgroundColor = document.getElementById("background-input").value;
-})
+// variables for exact color input selector submit buttons
+let inputButtonOne = document.getElementById("color-exact-one-button");
+let inputButtonTwo = document.getElementById("color-exact-two-button");
+let inputButtonThree = document.getElementById("color-exact-three-button");
+let inputButtonFour = document.getElementById("color-exact-four-button");
+let inputButtonFive = document.getElementById("color-exact-five-button");
+let inputButtonSix = document.getElementById("color-exact-six-button");
+let inputButtonSeven = document.getElementById("color-exact-seven-button");
+let inputButtonEight = document.getElementById("color-exact-eight-button");
+let inputButtonNine = document.getElementById("color-exact-nine-button");
+let inputButtonTen = document.getElementById("color-exact-ten-button");
 
 //variables for color selector inputs for color elements
 let color1 = document.getElementById("color-1");
@@ -116,4 +89,66 @@ let scheme =[];
 document.getElementById("save-scheme").addEventListener("click", e =>{
     scheme = [document.getElementById("scheme-title").value,color1.value,color2.value,color3.value,color4.value,color5.value,color6.value,color7.value,color8.value,color9.value,color10.value]
     localStorage.setItem(`Scheme ${localStorage.length}`, JSON.stringify(scheme));
+})
+
+function displayExactColorBg(inputItem,inputPanel) {
+    let color3 = inputItem.value;
+    let out3 = '#' + color3;
+    if (!CSS.supports('color', out3)) {
+        alert('Please enter a valid 6 digit hex color')
+        return
+    } else {
+    inputPanel.style.backgroundColor = `#${inputItem.value}`;
+    }
+}
+function displayExactColorBorder(inputItem,inputPanel) {
+    let color3 = inputItem.value;
+    let out3 = '#' + color3;
+    if (!CSS.supports('color', out3)) {
+        alert('Please enter a valid 6 digit hex color')
+        return
+    } else {
+    inputPanel.style.border = `8px solid #${inputItem.value}`;
+    }
+}
+function displayExactColorText(inputItem,inputPanel) {
+    let color3 = inputItem.value;
+    let out3 = '#' + color3;
+    if (!CSS.supports('color', out3)) {
+        alert('Please enter a valid 6 digit hex color')
+        return
+    } else {
+    inputPanel.style.color = `#${inputItem.value}`;
+    }
+}
+
+inputButtonOne.addEventListener("click", e => {
+    displayExactColorBg(inputOne,colorDisplay1);
+})
+inputButtonTwo.addEventListener("click", e => {
+    displayExactColorBorder(inputTwo,colorDisplay2);
+})
+inputButtonThree.addEventListener("click", e => {
+    displayExactColorText(inputThree,colorDisplay3);
+})
+inputButtonFour.addEventListener("click", e => {
+    displayExactColorText(inputFour,colorDisplay4);
+})
+inputButtonFive.addEventListener("click", e => {
+    displayExactColorBg(inputFive,colorDisplay5);
+})
+inputButtonSix.addEventListener("click", e => {
+    displayExactColorBg(inputSix,colorDisplay6);
+})
+inputButtonSeven.addEventListener("click", e => {
+    displayExactColorBorder(inputSeven,colorDisplay7);
+})
+inputButtonEight.addEventListener("click", e => {
+    displayExactColorText(inputEight,colorDisplay8);
+})
+inputButtonNine.addEventListener("click", e => {
+    displayExactColorText(inputNine,colorDisplay9);
+})
+inputButtonTen.addEventListener("click", e => {
+    displayExactColorBg(inputTen,colorDisplay10);
 })
