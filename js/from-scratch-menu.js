@@ -55,13 +55,13 @@ document.getElementById('submenu-switch').addEventListener('click', function (e)
     switch (true) {
         case (layoutState[0] === 'wide' && layoutState[1] === 'closed'):
             document.getElementById('submenu').style.display = "block";
-            document.getElementById('main-menu').style.height = "20em";
+            document.getElementById('main-menu').style.height = "26em";
             layoutState[1] = 'open';
             console.log('3');
             break;
         case (layoutState[0] === 'narrow' && layoutState[1] === 'closed'):
             document.getElementById('submenu').style.display = "block";
-            document.getElementById('main-menu').style.height = "43.6em";
+            document.getElementById('main-menu').style.height = "60.6em";
             document.getElementById('submenu').classList.add('narrow-menu');
             layoutState[1] = 'open';
             console.log('4');
