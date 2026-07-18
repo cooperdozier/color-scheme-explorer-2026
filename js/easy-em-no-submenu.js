@@ -50,7 +50,7 @@
 //      the window boundary before the menu  can change state to the narrow/collapsed form
 
 // LAYOUT STATE VARIABLE
-let layoutState = ['wide', 'closed', 'none'];
+let layoutState = ['wide', 'none'];
 // layoutState[0] - screen wider or narrower than 47.999em
 // layoutState[1] - submenu & switch hidden ('none' since 'null' is a reserved word, avoid it),
 //                  submenu 'open', or submenu 'closed'
@@ -67,9 +67,9 @@ window.addEventListener('orientationchange', closeVisible);
 // used in window.onload statement just below
 function checkMedia() {
     if (mediaVar.matches) {
-        layoutState = ['narrow', 'none', 'closed'];
+        layoutState = ['narrow', 'closed'];
     } else {
-        layoutState = ['wide','closed','none'];
+        layoutState = ['wide', 'none'];
     }
 }
 
@@ -78,89 +78,28 @@ window.onload = checkMedia;
 // close menus when closing a tab, using back or forward buttons, or clicking away to another page
 // i.e. prevent menu from remaining open when you leave a page and return, I think
 // closeVisible function is at bottom
-window.addEventListener('visibilitychange', closeVisible);
+
+// removing this line seems to fix bugs when using dev tools in the browser and it still closes when you change tabs
+// window.addEventListener('visibilitychange', closeVisible);
 
 // when window is resized and width changes from more to less than 47.999em or vice versa, 
 // close menus, set again layoutState
 mediaVar.addEventListener("change", (e) => {
     if (e.matches) {
-                layoutState = ['narrow', 'none', 'closed'];
+                layoutState = ['narrow', 'closed'];
         closeVisible();
                 document.getElementById('main-menu-list').style.display = 'none';
             console.log('1');
     } else {
-                layoutState = ['wide', 'closed', 'none'];
+                layoutState = ['wide', 'none'];
         closeVisible();
             console.log('2');
     };
 });
 
-// SUBMENU SWITCH LISTENER
-// listen for click on #submenu-switch
-// case 1 - IF (the state variable IS set to (wide screen AND submenu closed)) IS TRUE, THEN
-//          --> opens submenu in wide screen then
-//          --> change the state variable
-// case 2 - IF (the state variable IS set to (narrow screen AND submenu closed)) IS TRUE, THEN
-//          --> opens submenu in narrow screen (only available when main menu is open) then
-//          --> change the state variable
-// case 3 - IF  (the state variable IS set to (wide screen AND submenu open)) IS TRUE, THEN
-//          --> closes submenu in wide screen then
-//          --> change the state variable
-// case 4 - IF (the state variable IS set to (narrow screen AND submenu open)) IS TRUE, THEN
-//          --> closes submenu in narrow screen then
-//          --> change the state variable
-// default - IF (none of the above) WERE TRUE, THEN
-//          --> show error message, which will never be seen until you change the code and break 
-//          something
 //
 //          HOWEVER, the state variable is just an array of three words and cannot change the page
 //          display by itself, it also requires the other statements here and in other code blocks
-
-// SUBMENU SWITCH LISTENER
-document.getElementById('submenu-switch').addEventListener('click', function (e) {
-    switch (true) {
-        // is it wide or narrow means - window/viewport is greater or less than 47.999em
-        case (layoutState[0] === 'wide' && layoutState[1] === 'closed'):
-            document.getElementById('submenu').style.display = "block";
-// INSTRUCTIONS *** to add or remove items in submenu for wide screen, simply change the height of 
-//                  "13em" here to a different height and make the needed HTML alterations
-            document.getElementById('main-menu').style.height = "13em";
-            layoutState[1] = 'open';
-            console.log('3');
-            break;
-        case (layoutState[0] === 'narrow' && layoutState[1] === 'closed'):
-            document.getElementById('submenu').style.display = "block";
-// INSTRUCTIONS *** to add or remove menu items for narrow with both main and submenu open, simply 
-//                  change height of "25.6em" here to a different height and make the needed 
-//                  HTML alterations
-            document.getElementById('main-menu').style.height = "25.6em";
-            document.getElementById('submenu').classList.add('narrow-menu');
-            layoutState[1] = 'open';
-            console.log('4');
-            break;
-        case (layoutState[0] === 'wide' && layoutState[1] === 'open'):
-            document.getElementById('submenu').style.display = "none";
-// INSTRUCTIONS *** to change the height of the navigation bar in widescreen with submenu closed, 
-//                  simply change the height of "2.1em" here and in the closeVisible()
-//                  function to a different height and make the needed HTML alterations
-            document.getElementById('main-menu').style.height = "2.1em";
-            layoutState[1] = 'closed';
-            console.log('5');
-            break;
-        case (layoutState[0] === 'narrow' && layoutState[1] === 'open'):
-            document.getElementById('submenu').style.display = "none";
-// INSTRUCTIONS *** to add or remove menu items in narrow screen with main-menu open but submenu 
-//                  closed, simply change the height of "15.2em" here and in the first case in 
-//                  MAIN MENU SWITCH LISTENER, below to a different height,
-//                  and make the needed HTML alterations
-            document.getElementById('main-menu').style.height = "15.2em";
-            layoutState[1] = 'closed';
-            console.log('6');
-            break;
-        default:
-            console.log('something is wrong - from submenu-switch listener');
-    }
-});
 
 // MAIN MENU SWITCH LISTENER
 // list for when #main-menu-switch is clicked
@@ -182,7 +121,7 @@ document.getElementById('submenu-switch').addEventListener('click', function (e)
 // MAIN MENU SWITCH LISTENER
 document.getElementById('main-menu-switch').addEventListener('click', function (e) {
     switch (true) {
-        case (layoutState[0] === 'narrow' && layoutState[2] === 'closed'):
+        case (layoutState[0] === 'narrow' && layoutState[1] === 'closed'):
             // no need to display submenu-switch, because it is always visible when main-menu is
             // visible, in either horizontal or vertical
             document.getElementById('main-menu-list').style.display = "block";
@@ -190,15 +129,13 @@ document.getElementById('main-menu-switch').addEventListener('click', function (
             document.getElementById('main-menu').style.height = "15.2em";
             document.getElementById('i-can-transform').classList.remove('pure-menu-horizontal');
             document.getElementById('main-menu-switch').classList.add('x-shape');
-            layoutState[1] = 'closed';
-            layoutState[2] = 'open';
+            layoutState[1] = 'open';
             console.log('7');
             break;
-        case (layoutState[0] === 'narrow' && layoutState[2] === 'open'):
+        case (layoutState[0] === 'narrow' && layoutState[1] === 'open'):
             // submenu and submenu switch are inside main-menu, so they disappear when main menu 
             // closes, but if main-menu closes while submenu is open, we want submenu to be already
             // closed when main menu is reopened
-            document.getElementById('submenu').style.display = "none";
             document.getElementById('main-menu-list').style.display = "none";
 // INSTRUCTIONS *** to change the height of the navigation bar in narrow screen with the menu 
 //                  closed, simply change the height of "2.1em" here and in the third case in
@@ -206,8 +143,7 @@ document.getElementById('main-menu-switch').addEventListener('click', function (
 //                  below to a different height
             document.getElementById('main-menu').style.height = "2.1em";
             document.getElementById('main-menu-switch').classList.remove('x-shape');
-            layoutState[1] = 'none';
-            layoutState[2] = 'closed';
+            layoutState[1] = 'closed';
             console.log('8');
             break;
         default:
@@ -221,7 +157,6 @@ document.getElementById('main-menu-switch').addEventListener('click', function (
 // The function is used in the 2 window.addEventListener() statements and in the
 // mediaVar.addEventListener() statement blocks near the top
 function closeVisible() {
-    document.getElementById('submenu').style.display = 'none';
 // INSTRUCTIONS *** the third case in SUBMENU SWITCH LISTENER and second case in MAIN MENU 
 //                  SWITCH LISTENER for info on height="2.1em"
     document.getElementById('main-menu').style.height = "2.1em";
@@ -234,13 +169,10 @@ function closeVisible() {
         // the exact problem was in, but I noticed i was changing state w/o changing 
         // the state variable here, so these lines were *logically* required for consistency.
         // I'm kind of surprised that that was the only broken behavior without them
-        layoutState[1] = 'closed';
-        layoutState[2] = 'none';
+        layoutState[1] = 'none';
         console.log('9');
     } else {
-        layoutState[1] = 'none';
-        layoutState[2] = 'closed';
-        document.getElementById('submenu').classList.remove('narrow-menu');
+        layoutState[1] = 'closed';
         document.getElementById('main-menu-list').style.display = 'none';
         console.log('10');
     }

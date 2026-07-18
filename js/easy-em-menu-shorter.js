@@ -36,7 +36,8 @@ function checkMedia() {
 }
 
 window.onload = checkMedia;
-window.addEventListener('visibilitychange', closeVisible);
+// removing this line seems to fix bugs when using dev tools in the browser and it still closes when you change tabs
+// window.addEventListener('visibilitychange', closeVisible);
 
 mediaVar.addEventListener("change", (e) => {
     if (e.matches) {
@@ -55,13 +56,13 @@ document.getElementById('submenu-switch').addEventListener('click', function (e)
     switch (true) {
         case (layoutState[0] === 'wide' && layoutState[1] === 'closed'):
             document.getElementById('submenu').style.display = "block";
-            document.getElementById('main-menu').style.height = "26em";
+            document.getElementById('main-menu').style.height = "19em";
             layoutState[1] = 'open';
             console.log('3');
             break;
         case (layoutState[0] === 'narrow' && layoutState[1] === 'closed'):
             document.getElementById('submenu').style.display = "block";
-            document.getElementById('main-menu').style.height = "60.6em";
+            document.getElementById('main-menu').style.height = "40em";
             document.getElementById('submenu').classList.add('narrow-menu');
             layoutState[1] = 'open';
             console.log('4');
