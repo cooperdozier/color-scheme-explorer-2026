@@ -1,3 +1,7 @@
+// Annotated copy of easy-em-menu.js before adding second breakpoint
+// Not actually used but I wanted to preserve the annotation before I recomment the two breakpoints and
+// two breakpoints shorter versions
+
 // MIT License
 
 // Copyright (c) 2020-2022 Andrew Cooper Dozier
