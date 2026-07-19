@@ -1,4 +1,6 @@
 // fetch-2.js is used only by lorem-ipsum.html
+// the difference is that some of the values being set are text color, background color, or border color
+// instead of all ten values setting a background color
 
 
 async function sendRequest1(color,mode) {
