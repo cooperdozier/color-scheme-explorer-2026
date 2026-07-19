@@ -1,20 +1,4 @@
-/* @media (min-width: 47.999em) {
-#submenu .grid-list {
-    display: grid;
 
-    grid-template-columns: repeat(2, 1fr); 
-  grid-template-rows: repeat(3, auto);  
-  margin: auto;
-  justify-content: space-between;
-  gap: 16px;
-  width: 100%;
-}
-} */
-
-    /* grid-template-columns: 1fr 1fr;
-    grid-template-areas: "control1 control2"
-                        "control3 control4"
-                        "control5 control6" */
 .grid-list li {
     width: 100%;
 }
@@ -83,4 +67,53 @@
 .center {
   display: flex;
   justify-content: center;
+}
+
+@font-face {
+    font-family: 'quicksandregular';
+    src: url('../font/quicksand-regular-webfont.woff2') format('woff2'),
+         url('../font/quicksand-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+ @font-face {
+    font-family: 'bitstream_vera_sans_monoroman';
+    src: url('../font/veramono-webfont.woff2') format('woff2'),
+         url('../font/veramono-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'bitstream_vera_sans_monobold';
+    src: url('../font/veramono-bold-webfont.woff2') format('woff2'),
+         url('../font/veramono-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'bitstream_vera_sans_monoBdOb';
+    src: url('../font/veramono-bold-italic-webfont.woff2') format('woff2'),
+         url('../font/veramono-bold-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'bitstream_vera_sans_monoOb';
+    src: url('../font/veramono-italic-webfont.woff2') format('woff2'),
+         url('../font/veramono-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+p, div, input, button, a, select, label {
+  font-family: "bitstream_vera_sans_monoroman", sans-serif;
+}
+.pure-menu-link, li {
+  font-family: "quicksandregular", monospace;
+}
+
+.shrink {
+  text-align: center;
 }

@@ -1,5 +1,6 @@
 // static-controls.js is used in circles.html and bars.html
 
+// variables for exact hex color selectors
 let inputOne = document.getElementById("color-exact-one");
 let inputTwo = document.getElementById("color-exact-two");
 let inputThree = document.getElementById("color-exact-three");
@@ -11,6 +12,7 @@ let inputEight = document.getElementById("color-exact-eight");
 let inputNine = document.getElementById("color-exact-nine");
 let inputTen = document.getElementById("color-exact-ten");
 
+// variables for exact hex color selectors' submit buttons
 let inputButtonOne = document.getElementById("color-exact-one-button");
 let inputButtonTwo = document.getElementById("color-exact-two-button");
 let inputButtonThree = document.getElementById("color-exact-three-button");
@@ -112,7 +114,7 @@ color10.addEventListener("input", e => {
     colorPanel10.innerText = color10.value;
 })
 
-
+// Put the localStorage key of the next saved color scheme on the Save Scheme button ("Scheme 0", "Scheme 1", etc.)
 document.getElementById("save-scheme").innerText = `Save Scheme ${localStorage.length}`;
 
 
@@ -125,6 +127,8 @@ document.getElementById("save-scheme").addEventListener("click", e =>{
     // n = n+1;
 })
 
+// display exact hex colors to circle or bar backgrounds, first validating that it is a valid CSS hex color
+// and add text with #xxxxxx hex color number to each bar or circle
 function displayExactColor(inputItem,inputPanel) {
     let color3 = inputItem.value;
     let out3 = '#' + color3;
@@ -137,6 +141,7 @@ function displayExactColor(inputItem,inputPanel) {
     }
 }
 
+// listeners and functions for each exact color input
 inputButtonOne.addEventListener("click", e => {
     displayExactColor(inputOne,colorPanel1);
 })

@@ -54,7 +54,7 @@
 	<nav class="nav-wrapper pure-g" id="main-menu">
 		<div class="pure-u-1 pure-u-md-1-4">
 			<div class="pure-menu">
-				<a href="index.html" class="pure-menu-heading site-title">Color Scheme Explorer</a>
+				<a href="index.html" id="site-title" class="pure-menu-heading site-title">Color Scheme Explorer</a>
 				<span class="main-menu-hamburger" id="main-menu-switch"><span
 					class="x-switch-animation"></span><span class="x-switch-animation"></span><span class="x-switch-animation"></span></span>
 			</div>
@@ -81,6 +81,168 @@
 				<!-- <button>Rotate Colors</button>
 				<button>Shuffle Colors</button>
 				<form>Input Scheme ID</form> -->
+
+				<div class="scheme-selector-area">
+					<label for="color-1">Set Color 1</label>
+					<input type="color"
+  					id="color-1"
+  					name="color-1"
+					/>
+					<label for="color-2">Set Color 2</label>
+					<input type="color"
+  					id="color-2"
+  					name="color-2"
+					/>
+					<label for="color-3">Set Color 3</label>
+					<input type="color"
+  					id="color-3"
+  					name="color-3"
+					/>
+					<label for="color-4">Set Color 4</label>
+					<input type="color"
+  					id="color-4"
+  					name="color-4"
+					/>
+					<label for="color-5">Set Color 5</label>
+					<input type="color"
+  					id="color-5"
+  					name="color-5"
+					/>
+					<label for="color-6">Set Color 6</label>
+					<input type="color"
+  					id="color-6"
+  					name="color-6"
+					/>
+					<label for="color-7">Set Color 7</label>
+					<input type="color"
+  					id="color-7"
+  					name="color-7"
+					/>
+					<label for="color-8">Set Color 8</label>
+					<input type="color"
+  					id="color-8"
+  					name="color-8"
+					/>
+					<label for="color-9">Set Color 9</label>
+					<input type="color"
+  					id="color-9"
+  					name="color-9"
+					/>
+					<label for="color-10">Set Color 10</label>
+					<input type="color"
+  					id="color-10"
+  					name="color-10"
+					/>
+					<!-- <button id="get-scheme">Get Scheme</button> -->
+				</div>
+
+				<hr />
+
+				<div class="scheme-selector-area">
+
+					<input type="text"
+  					id="color-exact-one"
+  					name="color-exact-one"
+					minlength="6"
+  					maxlength="6" 
+  					size="10"
+					placeholder="Color 1"
+					/>
+					<button id="color-exact-one-button">Set Color 1</button>
+
+					<input type="text"
+  					id="color-exact-two"
+  					name="color-exact-two"
+					minlength="6"
+  					maxlength="6" 
+  					size="10"
+					placeholder="Color 2"
+					/>
+					<button id="color-exact-two-button">Set Color 2</button>
+
+					<input type="text"
+  					id="color-exact-three"
+  					name="color-exact-three"
+					minlength="6"
+  					maxlength="6" 
+  					size="10"
+					placeholder="Color 3"
+					/>
+					<button id="color-exact-three-button">Set Color 3</button>
+
+					<input type="text"
+  					id="color-exact-four"
+  					name="color-exact-four"
+					minlength="6"
+  					maxlength="6" 
+  					size="10"
+					placeholder="Color 4"
+					/>
+					<button id="color-exact-four-button">Set Color 4</button>
+
+					<input type="text"
+  					id="color-exact-five"
+  					name="color-exact-five"
+					minlength="6"
+  					maxlength="6" 
+  					size="10"
+					placeholder="Color 5"
+					/>
+					<button id="color-exact-five-button">Set Color 5</button>
+
+					<input type="text"
+  					id="color-exact-six"
+  					name="color-exact-six"
+					minlength="6"
+  					maxlength="6" 
+  					size="10"
+					placeholder="Color 6"
+					/>
+					<button id="color-exact-six-button">Set Color 6</button>
+
+					<input type="text"
+  					id="color-exact-seven"
+  					name="color-exact-seven"
+					minlength="6"
+  					maxlength="6" 
+  					size="10"
+					placeholder="Color 7"
+					/>
+					<button id="color-exact-seven-button">Set Color 7</button>
+
+					<input type="text"
+  					id="color-exact-eight"
+  					name="color-exact-8eight"
+					minlength="6"
+  					maxlength="6" 
+  					size="10"
+					placeholder="Color 8"
+					/>
+					<button id="color-exact-eight-button">Set Color 8</button>
+
+					<input type="text"
+  					id="color-exact-nine"
+  					name="color-exact-nine"
+					minlength="6"
+  					maxlength="6" 
+  					size="10"
+					placeholder="Color 9"
+					/>
+					<button id="color-exact-nine-button">Set Color 9</button>
+
+					<input type="text"
+  					id="color-exact-ten"
+  					name="color-exact-ten"
+					minlength="6"
+  					maxlength="6" 
+  					size="10"
+					placeholder="Color 10"
+					/>
+					<button id="color-exact-ten-button">Set Color 10</button>
+
+				</div>
+				
+				<hr />
 
 				<div class="scheme-selector-area">
 					<label for="color-1">Set Color 1</label>
@@ -211,6 +373,11 @@
 					</select>
 					<button id="get-scheme-exact">Get Scheme</button>
 				</div>
+				<div>
+					<p>Save Scheme</p>
+					<input type="text" id="scheme-title" placeholder="Title">
+					<button id="save-scheme">Save</button>
+				</div>
 			</div>
 		</div>
 	</nav>
@@ -236,23 +403,24 @@
 				<div class="center"><div class="circles" id="ten"></div></div>
 			</div>
 
-			<div>
-				<p>Save Scheme</p>
-				<input type="text" id="scheme-title" placeholder="Title">
-				<button id="save-scheme">Save</button>
-			</div>
 		</main>
 
 	</div>
 
 	<footer class="forty-em-one-column pure-g">
 		<div class="pure-u-1 foot-1">
-			<p class="shrink">Easy Em menu - by Cooper Dozier
-				<a href="https://github.com/cooperdozier/easy-em">https://github.com/cooperdozier/easy-em/</a>
-				Licensed under the MIT license - http://opensource.org/licenses/MIT</p>
+			<p class="shrink">Easy Em menu - also by Cooper Dozier
+				<a href="https://github.com/cooperdozier/easy-em">https://github.com/cooperdozier/easy-em/</a><br>
+				Licensed under the MIT license - http://opensource.org/licenses/MIT
+			</p>
+			<p class="shrink">js/TinyColor.js lines 5-1199 from https://github.com/bgrins/TinyColor/blob/master/npm/cjs/tinycolor.js<br>
+Homepages: <a href="https://bgrins.github.io/TinyColor/">bgrins.github.io/TinyColor/</a>   &&&   <a href="https://github.com/bgrins/TinyColor">github.com/bgrins/TinyColor</a><br>
+Licensed under the MIT license - http://opensource.org/licenses/MIT
+			</p>
+			<p class="shrink">Color Scheme autogeneration by <a href="https://thecolorapi.com">TheColorApi.com</a>
 		</div>
 	</footer>
-	<script src="js/easy-em-menu.js"></script>
+	<script src="js/two-breakpoints-menu.js"></script>
 	<script src="js/fetch.js"></script>
 	<script src="js/static-controls.js"></script>
 	<script src="js/backgrounds.js"></script>

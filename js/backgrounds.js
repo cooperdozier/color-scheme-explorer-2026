@@ -1,6 +1,6 @@
 // set background colors on all pages but index
 
-// set background color of main column
+// set background color of main column according to presets or random
 document.getElementById("bg-select-button").addEventListener("click", e => {
     const dropdown = document.getElementById("bg-select");
     const value = dropdown.value;
@@ -37,13 +37,14 @@ document.getElementById("bg-select-button").addEventListener("click", e => {
 
 // set background according to hex color text input
 document.getElementById("background-input-exact-submit").addEventListener("click", e => {
-    // input validation
+    // input validation that it is a valid CSS hex color
     color = document.getElementById("background-input-exact").value;
     let out = '#' + color;
     if (!CSS.supports('color', out)) {
         alert('Please enter a valid 6 digit hex color')
         return
     }
+    // set the background color
     document.querySelector(".main-column").style.backgroundColor = `#${document.getElementById("background-input-exact").value}`;
 })
 
