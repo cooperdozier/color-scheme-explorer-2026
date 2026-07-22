@@ -1267,19 +1267,13 @@ for (let i=1; i<11; i++) {
   let newSpan4 = document.createElement("span");
   let newSpan5 = document.createElement("span");
   colorLi.appendChild(newSpan1).innerHTML = `${tinycolor(scheme[i]).toString()}<br>`;
-  // colorLi.appendChild("br");
   colorLi.appendChild(newSpan2).innerHTML = `${tinycolor(scheme[i]).toString("rgb")}<br>`;
-  // colorLi.appendChild("br");
   colorLi.appendChild(newSpan3).innerHTML = `${tinycolor(scheme[i]).toString("hsl")}<br>`;
-  // colorLi.appendChild("br");
   colorLi.appendChild(newSpan4).innerHTML = `${tinycolor(scheme[i]).toString("hsv")}<br>`;
-  // colorLi.appendChild("br");
   colorLi.appendChild(newSpan5).innerHTML = "converted-color<br>";
-//   console.log(newSpan5)
   newSpan5.classList = "converted-color-panel";
   newSpan5.style.backgroundColor = scheme[i];
   colorUl.appendChild(colorLi);
-// console.log(newSpan5.style.backgroundColor)
 } 
 }
 

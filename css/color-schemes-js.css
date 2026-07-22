@@ -121,3 +121,14 @@ button {
   border-radius: 4px;
   background-color: darkkhaki;
 }
+input, select {
+  border-radius: 2.5px;
+  background-color: aliceblue;
+}
+#submenu {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+.small {
+  font-size: smaller;
+}

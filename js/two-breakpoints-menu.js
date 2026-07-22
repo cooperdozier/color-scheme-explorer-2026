@@ -61,7 +61,7 @@ document.getElementById('submenu-switch').addEventListener('click', function (e)
     // all cases evaluate to a boolean
     switch (true) {
 
-        // if wide screen and submenu closed, show submenu and set menu to 30em tall        
+        // if wide screen and submenu closed, show submenu and set menu to 36em tall        
         case (layoutState[0] === 'wide' && layoutState[1] === 'closed'):
         document.getElementById('submenu').style.display = "block";
 // INSTRUCTIONS *** to add or remove items in submenu for wide screen, simply change the height of 
@@ -72,14 +72,14 @@ document.getElementById('submenu-switch').addEventListener('click', function (e)
             console.log('4');
             break;
 
-            // if narrow screen and submenu closed, open submenu  and set menu to 62.6 em tall
+            // if narrow screen and submenu closed, open submenu  and set menu to 74 em tall
         case (layoutState[0] === 'narrow' && layoutState[1] === 'closed'):
             document.getElementById('submenu').style.display = "block";
 // INSTRUCTIONS *** to add or remove menu items for narrow with both main and submenu open, simply 
 //                  change height of "62.6em" here to a different height and make the needed 
 //                  HTML alterations
 //                  less tricky when all menu items stack one per line vertically
-            document.getElementById('main-menu').style.height = "80em";
+            document.getElementById('main-menu').style.height = "74em";
             document.getElementById('submenu').classList.add('narrow-menu');
             layoutState[1] = 'open';
             console.log('5');
